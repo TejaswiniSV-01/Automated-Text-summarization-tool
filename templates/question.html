@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'question.css' %}">
+<!-- <script href="{% static 'index.js'}"></script> -->
+<div class="container" text-align="center">
+  <div class="two alt-two">
+    <h1>CIPHER NEWS
+      <span>Too long? Didn't read? Try this!</span>
+    </h1>
+  </div><br><br>
+<div class="a1">
+  <form role="search">
+    {% csrf_token %}
+    <label for="search">Ask a Question..</label>
+    <input name="data" id="search" type="search" placeholder="Ask a Question.." autofocus required />
+    <button formmethod="post" type="submit">Go</button>      
+  </form><br>
+</div>  
+<div class="a2">
+  <a href="{%url 'home_view' %}" style="text-decoration:none">Home</a>
+</div>
+<p>
+    Answer: {{ans}}
+  </p> 
+</div>
+ 
+
+
+
+
+{% endblock content %}

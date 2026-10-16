@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'summary.css' %}">
+
+<div class="container" text-align="center">
+  <div class="two alt-two">
+    <h1>CIPHER NEWS
+      <span>Too long? Didn't read? Try this!</span>
+    </h1>
+  </div><br><br>
+  <p id="a3" class="display-5">Model: {{model_name}}</p>
+  <p>Description: {{description}}</p>
+  <p>Average Rouge-L score: {{avg_rougel}}</p>
+  <p>
+    Original Summary: {{orig_summary}}<br>
+    Tuned Summary: {{tun_summary}}<br>
+  </p>
+<br><br>
+<div class="a2">
+  <a href="{%url 'home_view' %}" style="text-decoration:none">Home</a>
+  <a href="{%url 'question_view' %}" style="text-decoration:none">Ask a Question!</a>
+</div>
+</div>
+ 
+
+
+
+
+{% endblock content %}

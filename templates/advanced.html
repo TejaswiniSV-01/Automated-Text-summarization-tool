@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% load static %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'advanced.css' %}">
+
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}"> -->
+<script href="{% static 'advanced.js'}"></script>
+<div class="container" text-align="center">
+  <div class="two alt-two">
+    <h1>CIPHER NEWS
+      <span>Too long? Didn't read? Try this!</span>
+    </h1>
+  </div><br><br>
+<div class="a1">
+  <form role="search">
+    {% csrf_token %}
+    <label for="search">Summarize</label>
+    <input name="data" id="search" type="search" placeholder="Summarize.." autofocus required />
+    <button formmethod="post" type="submit">Go</button>      
+  <br>
+  <div class="center" id="drop1">
+    <select name="model_name" class="select1" required>
+      <option selected>PEGASUS (default)</option>
+      <option>BART</option>
+      <option>RoBERTa</option>
+    </select>
+  </div>
+  <div class="center" id="drop2">
+    <select name="minlength" class="select2" required>
+      <option>10</option>
+      <option selected>20</option>
+      <option>30</option>
+      <option>40</option>
+      <option>50</option>
+      <option>100</option>
+      <option>125</option>
+      <option>150</option>
+    </select>
+  </div>
+</form>
+</div>   
+
+<div class="a2">
+  <a href="{%url 'home_view' %}" style="text-decoration:none">Home</a>
+  <a href="{%url 'file_view' %}" style="text-decoration:none">Use a file</a>
+  <!-- <a href="{%url 'advanced_view' %}" style="text-decoration:none">Advanced options</a> -->
+</div>
+</div>
+
+
+
+{% endblock content %}
